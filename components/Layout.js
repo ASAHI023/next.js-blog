@@ -2,7 +2,6 @@ import styles from "./layout.module.css";
 import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-import Image from "next/image";
 
 const name = "Shin Code";
 export const siteTitle = "Next.js Blog";
@@ -16,7 +15,7 @@ function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
-            <Image
+            <img
               src="/images/profile.png"
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
               alt={name}
@@ -26,7 +25,7 @@ function Layout({ children, home }) {
         ) : (
           <>
             <Link href="/">
-              <Image
+              <img
                 src="/images/profile.png"
                 alt=""
                 className={`${styles.headerImage} ${utilStyles.borderCircle}`}

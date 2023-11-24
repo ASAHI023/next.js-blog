@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/Layout";
@@ -44,9 +43,8 @@ export default function Home({ allPostsData }) {
           {allPostsData.map(({ id, date, title, thumbnail }) => (
             <article key={id}>
               <Link href={`/posts/${id}`}>
-                <Image
+                <img
                   src={`${thumbnail}`}
-                  alt="Description"
                   className={`${styles.thumbnailImage}`}
                 />
               </Link>
