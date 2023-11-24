@@ -5,7 +5,6 @@ import Link from "next/link";
 import Layout, { siteTitle } from "../components/Layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
-import Date from "../components/date";
 
 //SSGの場合
 export async function getStaticProps() {
@@ -45,8 +44,9 @@ export default function Home({ allPostsData }) {
           {allPostsData.map(({ id, date, title, thumbnail }) => (
             <article key={id}>
               <Link href={`/posts/${id}`}>
-                <img
+                <Image
                   src={`${thumbnail}`}
+                  alt="Description"
                   className={`${styles.thumbnailImage}`}
                 />
               </Link>
